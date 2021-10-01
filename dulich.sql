@@ -11,7 +11,7 @@
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 30/09/2021 21:23:17
+ Date: 01/10/2021 19:43:35
 */
 
 SET NAMES utf8mb4;
@@ -72,10 +72,9 @@ CREATE TABLE `feedback`  (
 DROP TABLE IF EXISTS `image`;
 CREATE TABLE `image`  (
   `id` int(11) NOT NULL,
-  `placeImage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `imgage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `placeID` int(11) NULL DEFAULT NULL,
   `contributeID` int(11) NULL DEFAULT NULL,
-  `contributeImage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
