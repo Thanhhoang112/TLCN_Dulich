@@ -1,9 +1,21 @@
-import * as React from 'react';
-import { Button } from 'react-native-paper';
+import React, { Component } from 'react';
+import {ImageBackground, StyleSheet, Button } from 'react-native';
+
+import BackgroundLogin from '../../../../assets/BackgroundLogin.png';
+
+export default class  CoverButton extends Component {
+  render() {
+    return (
+      <Button
+       title="Login"
+      style={{
+        backgroundColor : 'red',
+        position : "absolute",
+     }}>
+      </Button>
+    );
+  }
+}
 
 
-const MyComponent = () => (
-  <Button raised onPress={() => console.log('Pressed')}>
-    Press me
-  </Button>
-);
+

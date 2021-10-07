@@ -1,25 +1,59 @@
 import React, { Component } from 'react';
-import {ImageBackground, StyleSheet } from 'react-native';
+import {ImageBackground, StyleSheet, Button,View, TouchableOpacity } from 'react-native';
 
 import BackgroundLogin from '../../../../assets/BackgroundLogin.png';
-export default class BackgroundAccount extends Component {
+
+export default class  BackgroundAccount extends Component {
   render() {
     return (
       <ImageBackground
       source={BackgroundLogin}
-      style={styles.container}
-      ></ImageBackground>
+      style={styles.Background}>
+
+      <View         
+      style={styles.cover}>
+        <Button title="Login" style={styles.button}></Button>
+        
+        <View style={styles.space}></View>
+        
+        <Button title="Register" style={styles.button}></Button>    
+         
+      </View>
+      </ImageBackground>
     );
   }
 }
 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  Background: {
+    flex : 1,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
+  },
+  cover: {
+    backgroundColor : 'white',
+    position : 'absolute'
+  
+  },
+  space: {
+    width: '40%',
+    height: 20
+  },
+  button:{
+    width: "90%", margin: 10
   }
+
 });
+
+
+
+
+
+
+
+
+
 
 
 
