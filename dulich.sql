@@ -11,7 +11,7 @@
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 01/10/2021 19:43:35
+ Date: 10/10/2021 14:59:27
 */
 
 SET NAMES utf8mb4;
@@ -27,6 +27,7 @@ CREATE TABLE `bookroom`  (
   `userID` int(11) NULL DEFAULT NULL,
   `startTime` datetime(6) NULL DEFAULT NULL,
   `endTime` datetime(6) NULL DEFAULT NULL,
+  `phoneNumber` int(15) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
@@ -39,6 +40,7 @@ CREATE TABLE `booktable`  (
   `roomID` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `userID` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `starttime` datetime(6) NULL DEFAULT NULL,
+  `phoneNumber` int(15) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
@@ -148,6 +150,7 @@ CREATE TABLE `user`  (
   `phonenumber` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `sex` bit(1) NULL DEFAULT NULL COMMENT 'gioi tinh',
   `role` int(11) NULL DEFAULT NULL COMMENT '0 la nguoi dung, 1 la admin, 2 la khach san, 3 la nha hang ',
+  `isAvailable` bit(1) NULL DEFAULT NULL COMMENT 'Tai khoan co bi vo hieu hoa hay khong?',
   PRIMARY KEY (`userID`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 

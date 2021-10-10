@@ -1,19 +1,12 @@
 import React from 'react';
-import { Text, View, StyleSheet,ImageBackground,Button } from 'react-native';
-//import BackgroundLogin from './assets/BackgroundLogin.png';
-import BackgroundAccount from './src/features/account/Component/Account_style';
-//import CoverButton from './src/features/account/Component/Loginbt';
+import { Text, View, StyleSheet,ImageBackground } from 'react-native';
 import Constants from 'expo-constants';
-import { render } from 'react-dom';
-import styled from "styled-components/native";
-
-
+import Login from './src/Screen/Login';
+import SignUp from './src/Screen/SignUp';
 
 export default function App() {
     return (
-      <BackgroundAccount>
-
-      </BackgroundAccount>
+      < SignUp/>
      );
 
 } 
