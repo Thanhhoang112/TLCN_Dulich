@@ -1,15 +1,19 @@
 import React from 'react';
 import { StatusBar } from "expo-status-bar";
 import { View,SafeAreaView,Text,Button,StyleSheet } from "react-native";
-import { Formik } from 'formik';
-import {Octicons} from '@expo/vector-icons';
+import {KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import {Feather as Icon} from "@expo/vector-icons"
+
+
 import {  BackgroundAccount,
           CoverLogo ,
           LoginTitle,
           Logo,
+          CoverLoginInput,
           LoginInput,
           ForgotPassword,
-          CoverLogin
+          CoverLogin,
+          CoverLoginButton,
                 } from '../Component/Style';
 import { TextInput } from 'react-native-paper';
 
@@ -20,28 +24,31 @@ import { TextInput } from 'react-native-paper';
 const Login = () => {
     return (
     < BackgroundAccount >
-    <StatusBar style="Dark"/>   
-        <CoverLogo>
-            <Logo source = {require('../../assets/Logo.png')}/> 
-            <LoginTitle>Tài Khoản Đăng Nhập</LoginTitle>
-            
-            <LoginInput
-            
-            placeholder="Tên đăng nhập" />
-            
-            <LoginInput
-            icon='lock'
-            placeholder="Mật khẩu" />
-            
-            <ForgotPassword >Quên mật khẩu?</ForgotPassword>
+      <KeyboardAwareScrollView style={{
+  flex: 1
+}}>
+    <StatusBar style="Dark"/> 
+    <CoverLogo>
+        <Logo source = {require('../../assets/Logo.png')}/>
+        <LoginTitle>Tài Khoản Đăng Nhập</LoginTitle>
+    </CoverLogo>
 
-            <CoverLogin>
-                <Button title="Đăng nhập"/>
-            </CoverLogin>
-            
-            
-        </CoverLogo>
-        
+    <CoverLoginInput>
+       
+    <LoginInput
+        icon="mail"
+        placeholder="Tên đăng nhập"
+    />
+    <LoginInput
+    placeholder="Mật khẩu"
+    secureTextEntry
+    />
+    <ForgotPassword >Quên mật khẩu?</ForgotPassword>
+    <CoverLoginButton>
+        <Button title="Đăng nhập"/>
+    </CoverLoginButton>
+    </CoverLoginInput>
+    </KeyboardAwareScrollView>
     </BackgroundAccount>
     );
 }

@@ -13,17 +13,15 @@ background-color: powderblue;
 `;
 
 export const CoverLogo = styled.View`
-    flex: 1;
     width: 100%;
-    padding-top: 35px;
+    padding-top: 50px;
     align-items: center;
+    flex: 1
 `;
 
 export const Logo = styled.Image`
     width: 450px;
     height: 200px;
-   
-    
 `;
 
 
@@ -33,50 +31,64 @@ margin-bottom: 20px;
 letter-spacing: 1px;
 font-weight: bold;
 color: black;
-align-items: center;
 `;
 
+export const CoverLoginInput= styled.View`
+width: 100%;
+padding-top: -2px;
+flex: 1.6
+`;
+
+export const CoverSignUpInput= styled.View`
+width: 100%;
+padding-top: -2px;
+flex: 12
+`;
+
+
+
 export const LoginInput = styled(TextInput)`
-width: 290px;
-height: 50px;
-padding-top: 4px;
-padding-left: 5px;
-padding-right: 20px;
-border-radius: 5px;
-font-size:16px;
 margin-vertical:3px;
 margin-bottom: 10px;
+margin-left: 30px;
+margin-right: 30px;
+padding-top: 2px;
+padding-left: 30px;
+padding-right: 30px;
+
 `;
 
 export const ForgotPassword = styled.Text`
 font-size: 16px;
-padding-left:165px;
+padding-left:200px;
 letter-spacing: 1px;
 font-weight: bold;
 color: cornflowerblue;
 `;
 
-export const CoverLogin = styled.View`
-padding-top:1px;
-width: 80%;
+export const CoverLoginButton = styled.View`
+margin-right: 30px;
+padding-top: 30px;
+padding-left: 30px;
+padding-right: 0px;
 `;
 
 export const SignUpInput = styled(TextInput)`
 width: 290px;
 height: 65px;
-padding-top: 4px;
+padding-top: 1px;
 padding-left: 5px;
 padding-right: 20px;
 border-radius: 5px;
 font-size:16px;
 margin-vertical:3px;
 margin-bottom: 10px;
+margin-left: 35px;
 `;
 
 export const CoverSignUp = styled.View`
 padding-top:30px;
 width: 90%;
-
 `;
 
 

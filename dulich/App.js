@@ -6,7 +6,7 @@ import SignUp from './src/Screen/SignUp';
 
 export default function App() {
     return (
-      < SignUp/>
+      < Login/>
      );
 
 } 
