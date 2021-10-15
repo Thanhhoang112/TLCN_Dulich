@@ -2,16 +2,17 @@ import React from 'react';
 import { StatusBar } from "expo-status-bar";
 import { View,SafeAreaView,Text,Button,StyleSheet,KeyboardAvoidingView } from "react-native";
 import {KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import {Feather as Icon} from "@expo/vector-icons"
 
 
 import {  BackgroundAccount,
           CoverLogo ,
           LoginTitle,
-         
+          CoverBackInSignUp,
           CoverSignUpInput,
           SignUpInput,
-          ForgotPassword,
+          CoverTitleSignup,
           CoverLogin,
           CoverLoginButton,
                 } from '../Component/Style';
@@ -27,11 +28,13 @@ const Login = () => {
     <KeyboardAwareScrollView style={{
   flex: 1
 }}>
-    
     <StatusBar style="Dark"/> 
-    <CoverLogo>
+    <CoverBackInSignUp Style={{paddingTop: 10}}>
+        <AntDesignIcon  name="arrowleft" style={{fontSize: 30,}}/>
+        </CoverBackInSignUp>   
+    <CoverTitleSignup>      
         <LoginTitle>Đăng ký tài khoản</LoginTitle>
-    </CoverLogo>
+    </CoverTitleSignup>
 
     <CoverSignUpInput>
     
@@ -60,14 +63,12 @@ const Login = () => {
     <SignUpInput
     label="Bạn là..."
     /> 
-    
     <CoverLoginButton>
         <Button title="Đăng ký"/>
     </CoverLoginButton>
     </CoverSignUpInput>
         </KeyboardAwareScrollView>
     </BackgroundAccount>
-    
     );
 }
 

@@ -1,6 +1,6 @@
 import react from "react";
 import { Button, TextInput } from "react-native-paper";
-import { ImageBackground, StyleSheet, Text, View, Image, TouchableOpacity, InputText } from "react-native";
+import { ImageBackground, StyleSheet, Text, View, Image, TouchableOpacity, InputText,SafeAreaView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import styled from "styled-components";
 
@@ -12,9 +12,25 @@ justify-content: center;
 background-color: powderblue;
 `;
 
+
+export const CoverBackInSignUp = styled.View`
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 10px;
+    align-items: flex-start;
+    flex: 1
+`;
+
 export const CoverLogo = styled.View`
     width: 100%;
     padding-top: 50px;
+    align-items: center;
+    flex: 1
+`;
+
+export const CoverTitleSignup = styled.View`
+    width: 100%;
+    padding-top: 7px;
     align-items: center;
     flex: 1
 `;
