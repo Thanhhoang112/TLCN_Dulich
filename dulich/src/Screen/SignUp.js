@@ -1,76 +1,105 @@
-import React from 'react';
-import { StatusBar } from "expo-status-bar";
-import { View,SafeAreaView,Text,Button,StyleSheet,KeyboardAvoidingView } from "react-native";
+import * as React from 'react';
+import { Text, View, StyleSheet,TextInput,TouchableOpacity } from 'react-native';
 import {KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
-import {Feather as Icon} from "@expo/vector-icons"
 
 
-import {  BackgroundAccount,
-          CoverLogo ,
-          LoginTitle,
-          CoverBackInSignUp,
-          CoverSignUpInput,
-          SignUpInput,
-          CoverTitleSignup,
-          CoverLogin,
-          CoverLoginButton,
-                } from '../Component/Style';
-import { TextInput } from 'react-native-paper';
-
-
-
-
-//statusbar chua hoat dong
-const Login = () => {
-    return (
-    < BackgroundAccount >
-    <KeyboardAwareScrollView style={{
+const SignUp = ({navigation}) => {
+  return (
+    <View style={styles.container}>
+         <KeyboardAwareScrollView style={{
   flex: 1
 }}>
-    <StatusBar style="Dark"/> 
-    <CoverBackInSignUp Style={{paddingTop: 10}}>
-        <AntDesignIcon  name="arrowleft" style={{fontSize: 30,}}/>
-        </CoverBackInSignUp>   
-    <CoverTitleSignup>      
-        <LoginTitle>Đăng ký tài khoản</LoginTitle>
-    </CoverTitleSignup>
+        <View style={styles.TitleView}>
+            <TouchableOpacity onPress={() => {navigation.push('Login')}}>
+                <AntDesignIcon  name="arrowleft" style={styles.Arrowback}/>
+            </TouchableOpacity> 
+            <Text style={styles.Title}> Đăng ký tài khoản</Text>
+        </View>
 
-    <CoverSignUpInput>
-    
-    <SignUpInput
-        label ="Tên đăng nhập" 
-    />
-    
-    <SignUpInput
-        label ="Mật khẩu"
-        secureTextEntry
-    />
-
-    <SignUpInput
-    label ="Nhập lại mật khẩu"
-    secureTextEntry
-    />  
-
-    <SignUpInput
-        label="Địa chỉ Email" 
-        />  
+        <View >
+            <TextInput style={styles.Input} placeholder="Tên đăng nhập"/>
+            <TextInput style={styles.Input} placeholder="Mật Khẩu"/>
+            <TextInput style={styles.Input} placeholder="Nhập lại mật khẩu"/>
+            <TextInput style={styles.Input} placeholder="Địa chỉ Email"/>
+            <TextInput style={styles.Input} placeholder="Số điện thoại"/>
+        </View>
         
-    <SignUpInput
-        label="Số điện thoại"
-        />  
+        <View style={styles.LoginButtonView}>
+            <TouchableOpacity style={styles.LoginButton}>
+                <Text style={styles.LoginButtonText}> Đăng ký</Text>
+            </TouchableOpacity>
+        </View>
 
-    <SignUpInput
-    label="Bạn là..."
-    /> 
-    <CoverLoginButton>
-        <Button title="Đăng ký"/>
-    </CoverLoginButton>
-    </CoverSignUpInput>
+    
+
         </KeyboardAwareScrollView>
-    </BackgroundAccount>
-    );
+    </View>
+  );  
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#99FFFF',
+    
+  },
+  Logo: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: 25
 
-export default Login;
+  },
+  TitleView:{
+    marginTop:60,
+    textAlign: 'center',
+    marginBottom: 18
+  },
+  Title:{
+    textAlign: 'center',
+    fontSize: 20,
+  },
+  InputView:{
+    backgroundColor: 'rgba(0,0,0,0)',
+    position: 'absolute', 
+    top: 0,
+    left: 5,
+    right: 5
+  },
+  Input:{
+    height: 60,
+    padding: 10,
+    marginTop: 10,
+    marginLeft: 30,
+    marginRight: 30,
+    fontSize: 18,
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: '#48BBEC',
+    backgroundColor: 'white',
+  },
+
+  LoginButtonView:{
+    elevation: 8,
+    backgroundColor: "#009688",
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginTop: 70,
+    margin: 20
+  },
+
+  LoginButtonText:{
+    fontSize: 18,
+    color: "#fff",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase"
+  },
+  Arrowback:{
+    fontSize: 30,
+    marginLeft:20
+  }
+});
+
+export default SignUp;

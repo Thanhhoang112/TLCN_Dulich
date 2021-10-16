@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input } from 'react-native-elements';
 import {View,Text,Image, Pressable, StyleSheet, TextInput, SafeAreaView} from 'react-native';
 import {KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
@@ -11,39 +12,41 @@ const ChangePassWord = () =>{
 
     return(
         <SafeAreaView style={Styles.container}>
+             <KeyboardAwareScrollView>
             <View style={Styles.logo}>
                 <Image
                     source={require('../../assets/Logo.png')}
                     style = {Styles.logo}
                 />
             </View>
-            <KeyboardAwareScrollView>
+           
                 <View style={Styles.cardInfo}>
-                    <TextInput
-                        style={Styles.inputText}
-                        onChangeText = {setFullName}
-                        value={fullName}
-                        placeholder="Họ và tên..."
-                    />
-                    <TextInput
+                <TextInput
+                        secureTextEntry
                         style={Styles.inputText}
                         onChangeText = {setEmail}
-                        value={email}
-                        placeholder="Email..."
+                        placeholder="Mật khẩu mới"
                     />
                     <TextInput
+                        secureTextEntry
                         style={Styles.inputText}
-                        onChangeText = {setPhoneNumber}
-                        value={phoneNumber}
-                        placeholder="Số điện thoại..."
+                        onChangeText = {setEmail}
+                        placeholder="Mật khẩu mới"
+                    />
+                    <TextInput
+                        secureTextEntry
+                        style={Styles.inputText}
+                        onChangeText = {setPhoneNumber}                       
+                        placeholder="Nhập lại mật khẩu"
                     />
                 </View>
-            </KeyboardAwareScrollView>
+           
             <View style={Styles.button}>
-                <Pressable onPress={()=>{print(fullName+" "+ email+ " "+ phoneNumber)}} style={Styles.buttonUpdate}>
+                <Pressable onPress={()=>{console.log(fullName+" "+ email+ " "+ phoneNumber)}} style={Styles.buttonUpdate}>
                     <Text style={Styles.textButton}>Cập nhật thông tin</Text>
                 </Pressable>
             </View>
+            </KeyboardAwareScrollView>
         </SafeAreaView>
     );
 }
@@ -57,7 +60,6 @@ const Styles = StyleSheet.create({
         alignItems:"center",
     },
     cardInfo:{
-        flex:3,
         padding: 25,
         backgroundColor: 'white',
         borderRadius: 20,
