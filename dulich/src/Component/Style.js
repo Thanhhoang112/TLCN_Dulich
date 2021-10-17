@@ -5,6 +5,9 @@ import { StatusBar } from "expo-status-bar";
 import styled from "styled-components";
 
 
+
+
+
 //background for login and register page
 export const BackgroundAccount = styled.View`
 flex: 1;

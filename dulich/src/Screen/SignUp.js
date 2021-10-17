@@ -2,6 +2,9 @@ import * as React from 'react';
 import { Text, View, StyleSheet,TextInput,TouchableOpacity } from 'react-native';
 import {KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+import {Picker} from '@react-native-picker/picker';
+
+
 
 
 const SignUp = ({navigation}) => {
@@ -23,6 +26,17 @@ const SignUp = ({navigation}) => {
             <TextInput style={styles.Input} placeholder="Nhập lại mật khẩu"/>
             <TextInput style={styles.Input} placeholder="Địa chỉ Email"/>
             <TextInput style={styles.Input} placeholder="Số điện thoại"/>
+        <View style={styles.ViewTitlePicker}>
+          <Text  style={styles.TextTitlePicker} >Bạn là: </Text>
+        </View>
+        </View>
+          <View style={styles.ViewPicker}>
+            <Picker>
+                <Picker.Item label="Người dùng" value="User" />
+                <Picker.Item label="Nhà cung cấp khách sạn" value="Hotel" />
+                <Picker.Item label="Nhà cung cấp nhà hàng" value="Restaurant" />
+                <Picker.Item label="Quản trị viên" value="Admin" />
+            </Picker>
         </View>
         
         <View style={styles.LoginButtonView}>
@@ -42,7 +56,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#99FFFF',
-    
   },
   Logo: {
     flexDirection: 'column',
@@ -85,7 +98,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    marginTop: 70,
+    marginTop: 45,
     margin: 20
   },
 
@@ -99,6 +112,20 @@ const styles = StyleSheet.create({
   Arrowback:{
     fontSize: 30,
     marginLeft:20
+  },
+  ViewPicker:{
+    marginTop:10,
+    marginRight:30,
+    marginLeft:30,
+    backgroundColor: "#fff",
+    padding:10
+  },
+  ViewTitlePicker:{
+    marginTop:15,
+    marginLeft:35
+  },
+  TextTitlePicker:{
+    fontSize:17
   }
 });
 

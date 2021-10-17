@@ -22,7 +22,7 @@ const Contact =()=>(
 
 export default function App() {
     return (
-      <ChangePassWord/>
+      <SignUp/>
      );
 } 
 
