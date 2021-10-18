@@ -63,5 +63,37 @@ var dataUser =[
         "role":0,
         "isAvailable": true,
     },
+    {
+        "id": 9,
+        "fullName":"Duc Hao 9",
+        "email":"duchao8@gmail.com",
+        "phoneNumber": "07000008",
+        "role":0,
+        "isAvailable": true,
+    },
+    {
+        "id": 10,
+        "fullName":"Duc Hao 10",
+        "email":"duchao8@gmail.com",
+        "phoneNumber": "07000008",
+        "role":0,
+        "isAvailable": true,
+    },
+    {
+        "id": 11,
+        "fullName":"Duc Hao 11",
+        "email":"duchao8@gmail.com",
+        "phoneNumber": "07000008",
+        "role":0,
+        "isAvailable": true,
+    },
+    {
+        "id": 12,
+        "fullName":"Duc Hao 12",
+        "email":"duchao8@gmail.com",
+        "phoneNumber": "07000008",
+        "role":0,
+        "isAvailable": true,
+    },
 ];
 export default dataUser;

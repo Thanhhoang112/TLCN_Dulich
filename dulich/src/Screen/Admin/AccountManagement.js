@@ -8,14 +8,15 @@ import { Appbar } from 'react-native-paper';
 class AccountManagement extends Component{
     render(){
         return(
-            <SafeAreaView>
-                <View>
+            <SafeAreaView style={{flex: 1}}>
+                <View >
                 <Appbar.Header statusBarHeight ={20}>
                     <Appbar.BackAction onPress={() => {}} />
                     <Appbar.Content title="Quản lý người dùng"/>
                 </Appbar.Header>
                 <FlatList
                     data={dataUser}
+                    ListFooterComponent={<View style={{height: 150}}/>}
                     keyExtractor={item => item.id.toString()}
                     renderItem={({item, index})=>{
                         return(
