@@ -2,17 +2,17 @@ import React from 'react';
 import {View,Text,Image, Pressable, StyleSheet, TextInput, SafeAreaView} from 'react-native';
 import {KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Appbar } from 'react-native-paper';
-const ChangePassWord = () =>{
-    const [oldPassword, setOldPassWord] = React.useState('');
-    const [newPassword, setNewPassword] = React.useState('');
-    const [repeatPassword, setRepeatPassword] = React.useState('');
+const ChangeInfo = () =>{
+    const [fullName, setFullName] = React.useState('Duc Hao');
+    const [email, setEmail] = React.useState('duchao3003@gmail.com');
+    const [phoneNumber, setPhoneNumber] = React.useState('01119191991');
 
 
     return(
         <SafeAreaView style={Styles.container}>
             <Appbar.Header statusBarHeight ={20}>
                 <Appbar.BackAction onPress={() => {}} />
-                <Appbar.Content title="Thay đổi mật khẩu"/>
+                <Appbar.Content title="Chỉnh sửa thông tin"/>
             </Appbar.Header>
              <KeyboardAwareScrollView>
             <View style={Styles.logo}>
@@ -23,31 +23,31 @@ const ChangePassWord = () =>{
             </View>
            
                 <View style={Styles.cardInfo}>
-                    <Text style={Styles.title}>Mật khẩu cũ</Text>
+                    <Text style={Styles.title}>Họ và tên</Text>
                     <TextInput
-                        secureTextEntry
                         style={Styles.inputText}
-                        onChangeText = {setOldPassWord}
-                        placeholder="Mật khẩu cũ..."
+                        onChangeText = {setFullName}
+                        placeholder="Nhập họ và tên..."
+                        value={fullName}
                     />
-                    <Text style={Styles.title}>Mật khẩu mới</Text>
+                    <Text style={Styles.title}>Email</Text>
                     <TextInput
-                        secureTextEntry
                         style={Styles.inputText}
-                        onChangeText = {setNewPassword}
-                        placeholder="Mật khẩu mới..."
+                        onChangeText = {setEmail}
+                        placeholder="Nhập email..."
+                        value={email}
                     />
-                    <Text style={Styles.title}>Nhập lại mật khẩu mới</Text>
+                    <Text style={Styles.title}>Số điện thoại</Text>
                     <TextInput
-                        secureTextEntry
                         style={Styles.inputText}
-                        onChangeText = {setRepeatPassword}                       
-                        placeholder="Nhập lại mật khẩu..."
+                        onChangeText = {setPhoneNumber}                       
+                        placeholder="Nhập số điện thoại..."
+                        value={phoneNumber}
                     />
                 </View>
            
             <View style={Styles.button}>
-                <Pressable onPress={()=>{console.log(oldPassword+" "+ newPassword+ " "+ repeatPassword)}} style={Styles.buttonUpdate}>
+                <Pressable onPress={()=>{console.log(fullName+" "+ email+ " "+ phoneNumber)}} style={Styles.buttonUpdate}>
                     <Text style={Styles.textButton}>Xác nhận</Text>
                 </Pressable>
             </View>
@@ -107,4 +107,4 @@ const Styles = StyleSheet.create({
     },
 });
 
-export default ChangePassWord;
+export default ChangeInfo;
