@@ -14,13 +14,21 @@ const SignUp = ({navigation}) => {
   flex: 1
 }}>
         <View style={styles.TitleView}>
-            <TouchableOpacity onPress={() => {navigation.push('Login')}}>
-                <AntDesignIcon  name="arrowleft" style={styles.Arrowback}/>
-            </TouchableOpacity> 
-            <Text style={styles.Title}> Đăng ký tài khoản</Text>
+          
+          <View style={[{flex:0.5,flexDirection:'row'}]} >
+              <TouchableOpacity onPress={() => {navigation.push('Login')}}>
+                  <AntDesignIcon  name="arrowleft" style={styles.Arrowback}/>
+              </TouchableOpacity>
+          </View>
+           
+            <View>
+              <Text style={styles.Title}> Đăng ký tài khoản</Text>
+            </View>
+          
         </View>
 
         <View >
+            <TextInput style={styles.Input} placeholder="Họ và tên"/>
             <TextInput style={styles.Input} placeholder="Tên đăng nhập"/>
             <TextInput style={styles.Input} placeholder="Mật Khẩu"/>
             <TextInput style={styles.Input} placeholder="Nhập lại mật khẩu"/>
@@ -35,7 +43,6 @@ const SignUp = ({navigation}) => {
                 <Picker.Item label="Người dùng" value="User" />
                 <Picker.Item label="Nhà cung cấp khách sạn" value="Hotel" />
                 <Picker.Item label="Nhà cung cấp nhà hàng" value="Restaurant" />
-                <Picker.Item label="Quản trị viên" value="Admin" />
             </Picker>
         </View>
         
@@ -64,7 +71,9 @@ const styles = StyleSheet.create({
 
   },
   TitleView:{
-    marginTop:60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop:30,
     textAlign: 'center',
     marginBottom: 18
   },
@@ -98,7 +107,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    marginTop: 45,
+    marginTop: 30,
     margin: 20
   },
 

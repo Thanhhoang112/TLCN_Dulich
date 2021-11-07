@@ -1,9 +1,32 @@
-import * as React from 'react';
+import  React, {useState} from 'react';
 import { Text, View, StyleSheet,Button,Image,TextInput,TouchableOpacity } from 'react-native';
+import axios, { Axios } from 'axios';
 import {KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { set } from 'react-native-reanimated';
 
 
 const Login = ({navigation}) => {
+  const [username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
+  const [loginStatus, setLoginStatus] = useState("");
+
+  const LoginPress = ()=>{
+    Axios.post("https://localhost:3001/login",
+    {
+      username: username,
+      password: Password
+    }).then((response)=>{
+      if(response.data.message){
+        setLoginStatus(response.data.message);
+      } else {
+        setLoginStatus(response.data[0].username);
+      }
+    })
+  }
+
+
+
+
   return (
     <View style={styles.container}>
          <KeyboardAwareScrollView style={{
@@ -18,12 +41,19 @@ const Login = ({navigation}) => {
         </View>
 
         <View >
-            <TextInput style={styles.Input} placeholder="Tên đăng nhập"/>
-            <TextInput style={styles.Input} placeholder="Mật Khẩu"/>
+            <TextInput style={styles.Input} placeholder="Tên đăng nhập"
+            onChange={(e)=>{setUsername(e.target.value)}} 
+            />
+            
+            
+            
+            <TextInput style={styles.Input} placeholder="Mật Khẩu"
+            onChange={(e)=>{setPassword(e.target.value)}} 
+            />
         </View>
         
         <View style={styles.LoginButtonView}>
-            <TouchableOpacity style={styles.LoginButton}>
+            <TouchableOpacity style={styles.LoginButton} onClick={LoginPress}>
                 <Text style={styles.LoginButtonText}
                       > Đăng nhập</Text>
             </TouchableOpacity>
@@ -35,6 +65,9 @@ const Login = ({navigation}) => {
               onPress={() => {navigation.push('SignUp')}}>
                 <Text style={styles. SignUpText}> Đăng ký tài khoản </Text>
             </TouchableOpacity>
+        </View>
+        <View >
+            <Text>{loginStatus}</Text>
         </View>
         </KeyboardAwareScrollView>
     </View>
